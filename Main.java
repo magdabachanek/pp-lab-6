@@ -1,30 +1,22 @@
-import java.util.ArrayList;
 import company.models.Manager;
 import company.models.Worker;
-import company.abstracts.Employee;
 
 public class Main {
     public static void main(String[] args) {
         Worker worker1 = new Worker("Klaudia", 3500, 1, "2023-08-09", "Florist");
         Worker worker2 = new Worker("Magda", 6700, 2, "2022-09-30", "Junior Developer");
-        Worker worker3 = new Worker("Pawel", 2300, 3, "2015-02-20", "Driver");
-        Worker worker4 = new Worker("Patryk", 6540, 4, "2017-07-17", "Electritian");
+        Worker worker3 = new Worker("Pawel", 2300, 1, "2015-02-20", "Driver");
+        Manager manager = new Manager("Renata", 5500, 3, "2022-08-15", "Quality Manager");
 
-        Manager manager = new Manager("Renata", 5500, 5, "2022-08-15", "Quality Manager");
 
-        ArrayList<Employee> employees = new ArrayList<>();
-        employees.add(worker1);
-        employees.add(worker2);
-        employees.add(worker3);
-        employees.add(worker4);
-        employees.add(manager);
+        System.out.println(worker1.getName() + " has code: " + worker1.hashCode());
+        System.out.println(worker2.getName() + " has code: " + worker2.hashCode());
+        System.out.println(worker3.getName() + " has code: " + worker3.hashCode());
+        System.out.println(manager.getName() + " has code: " + manager.hashCode());
 
-        for (Employee emp : employees) {
-            System.out.println("- " + emp.getName() + " (ID: " + emp.getId() +
-                    ", Position: " + emp.getPosition() +
-                    ", Hire date: " + emp.getHireDate() +
-                    ", Salary: " + emp.getSalary() + ")");
-            emp.work();
-        }
+
+        System.out.println(worker3.getName() + " equals worker1: " + worker3.equals(worker1));
+        System.out.println(worker3.getName() + " equals worker2: " + worker3.equals(worker2));
+        System.out.println(worker3.getName() + " equals manager: " + worker3.equals(manager));
     }
 }
