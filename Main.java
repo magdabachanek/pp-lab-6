@@ -31,7 +31,7 @@ public class Main {
         double totalManagerSalary = 0;
         double totalWorkerSalary = 0;
 
-        // Mapa do przechowywania pracowników o tym samym id
+    
         Map<Integer, List<Employee>> idMap = new HashMap<>();
         for (Employee emp : employees) {
             totalSalary += emp.getSalary();
@@ -40,7 +40,7 @@ public class Main {
             } else if (emp instanceof Worker) {
                 totalWorkerSalary += emp.getSalary();
             }
-            // Sprawdź, czy pracownik o tym samym id już istnieje w mapie
+            
             if (idMap.containsKey(emp.getId())) {
                 idMap.get(emp.getId()).add(emp);
             } else {
@@ -50,12 +50,12 @@ public class Main {
             }
         }
 
-        // Wyświetlanie informacji o sumach pensji
+      
         System.out.println("Total salary: " + totalSalary);
         System.out.println("Total manager salary: " + totalManagerSalary);
         System.out.println("Total worker salary: " + totalWorkerSalary);
 
-        // Wyświetlanie pracowników o tym samym id
+        
         for (Map.Entry<Integer, List<Employee>> entry : idMap.entrySet()) {
             List<Employee> empList = entry.getValue();
             if (empList.size() > 1) {
